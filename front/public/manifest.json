@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Ecommerce BB",
+  "name": "Ecommerce BB - devoirs pour LiveCampus sous react, node, express",
   "icons": [
     {
       "src": "favicon.ico",
