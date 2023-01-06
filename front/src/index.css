@@ -62,3 +62,40 @@ header, footer{
     padding: 25px;
     text-align: center;
 }
+
+.title{
+    font-weight: bold;
+    text-align: center;
+    margin: 25px;
+}
+
+.products__list{
+    display: flex;
+    overflow: auto;
+}
+
+.product{
+    border-radius: 0.25rem;
+    background-color: var(--main-text-color-hoover);
+    margin: 25px;
+    cursor: pointer;
+}
+
+.product__img{
+    border-radius: 0.25rem 0.25rem 0 0;
+    width: 200px;
+}
+
+.product__title{
+    margin-top: 10px;
+}
+
+.product__price{
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: end;
+}
+
+.product__title, .product__price, .product__category{
+    padding: 0 10px;
+}
