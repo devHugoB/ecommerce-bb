@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const userRouter = require('./routeur/user')
 const productRouter = require('./routeur/product')
 const categoryRouter = require('./routeur/category')
@@ -7,9 +8,9 @@ const commandLineRouter = require('./routeur/commandLine')
 const db = require('./data/database')
 const app = express()
 
-
 app.use(express.static("./assets"))
 app.use(express.json())
+app.use(cors())
 
 
 app.get("/", (req, res) => {
