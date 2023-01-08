@@ -10,7 +10,7 @@ function getAllProducts() {
 }
 function getProductById(id) {
   return new Promise((resolve, rej) => {
-    db.get("SELECT * FROM product WHERE id=?", id, (err, res) => {
+    db.get("SELECT p.id, p.name, p.description, p.photo, p.description, p.price, c.id as cat_id, c.name as cat_name FROM product as p, category as c WHERE p.id=? AND p.category_id = c.id", id, (err, res) => {
       if (err) rej(err)
       resolve(res)
     })

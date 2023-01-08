@@ -1,6 +1,6 @@
 import {Footer, Header} from "./components";
 import {Route, Routes} from "react-router";
-import {HomePage, NotFoundPage} from "./pages";
+import {HomePage, NotFoundPage, ShowProductPage} from "./pages";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/produit/:id" element={<ShowProductPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
