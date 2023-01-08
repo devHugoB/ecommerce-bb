@@ -2,7 +2,7 @@ const db = require("../data/database");
 
 function getAllProducts() {
   return new Promise((resolve, rej) => {
-    db.all("SELECT * FROM product", (err, res) => {
+    db.all("SELECT p.id, p.name, p.photo, p.description, p.price, c.id as cat_id, c.name as cat_name FROM product as p, category as c WHERE p.category_id = c.id", (err, res) => {
       if (err) rej(err)
       resolve(res)
     })
