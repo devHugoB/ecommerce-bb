@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link, NavLink} from "react-router-dom";
+import {CartContext} from "../context/CartContext";
 
 const Header = () => {
+  const {cart} = useContext(CartContext);
+
   return (
     <header>
       <nav className="nav">
@@ -13,6 +16,9 @@ const Header = () => {
           </li>
           <li className="nav__item">
             <NavLink to="/connexion" className="nav__link">Inscription</NavLink>
+          </li>
+          <li className="nav__item">
+            Panier({cart.length})
           </li>
         </ul>
       </nav>
