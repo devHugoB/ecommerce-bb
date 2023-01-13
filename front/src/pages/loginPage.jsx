@@ -4,9 +4,11 @@ import {AuthForm} from "../components";
 const LoginPage = () => {
   return (
     <>
-      <h1 className="title">Connexion</h1>
-      <hr/>
-      <AuthForm />
+      <div className="login">
+        <h1 className="title">Connexion</h1>
+        <AuthForm />
+      </div>
+      
     </>
   );
 };

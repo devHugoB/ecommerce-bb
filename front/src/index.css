@@ -27,6 +27,15 @@ header, footer{
     color: var(--main-text-color);
 }
 
+button{
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 0.25rem;
+    border: 0px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
 .nav{
     display: flex; 
     justify-content: space-between;
@@ -83,7 +92,7 @@ header, footer{
 
 .product__img{
     border-radius: 0.25rem 0.25rem 0 0;
-    width: 200px;
+    width: 100%;
 }
 
 .product__title{
@@ -98,4 +107,46 @@ header, footer{
 
 .product__title, .product__price, .product__category{
     padding: 0 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .login{
+        width: 250px;
+    }
+}
+
+.login{
+    text-align: center;
+    background-color:  var(--main-text-color-hoover);
+    border-radius: 0.25rem;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.login h1{
+    padding-top: 25px;
+}
+
+.login .auth{
+    padding-bottom: 25px;
+}
+
+.login .auth__submit{
+    margin-top: 25px;
+}
+
+.auth__row:first-child{
+    margin-bottom: 10px;
+}
+
+.auth__row label{
+    margin-right: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.auth__row input{
+    border: none;
+    border-radius: 0.25rem;
+    padding: 5px 10px;
 }

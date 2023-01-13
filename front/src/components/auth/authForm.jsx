@@ -41,13 +41,13 @@ const AuthForm = ({login = true}) => {
     <form className="auth" onSubmit={handleSubmit}>
       <div className="auth__row">
         <label htmlFor="email" className="auth__label">Adresse mail</label>
-        <input ref={emailRef} type="email" id="email" className="auth__input" placeholder="email@example.com" required />
+        <input ref={emailRef} type="email" id="email" className="auth__input" placeholder="Email@example.com" required />
         <span className="auth__error" id="email"></span>
       </div>
 
       <div className="auth__row">
         <label htmlFor="pwd" className="auth__label">Mot de passe</label>
-        <input ref={pwdRef} type="password" id="pwd" className="auth__input" placeholder="email@example.com" required />
+        <input ref={pwdRef} type="password" id="pwd" className="auth__input" placeholder="Mot de passe" required />
         <span className="auth__error" id="pwd"></span>
       </div>
 
