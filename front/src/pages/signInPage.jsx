@@ -4,9 +4,10 @@ import {AuthForm} from "../components";
 const SignInPage = () => {
   return (
     <>
+    <div className="signin">
       <h1 className="title">Inscription</h1>
-      <hr/>
       <AuthForm login={false} />
+    </div>
     </>
   );
 };

@@ -109,9 +109,7 @@ button{
     padding: 0 10px;
 }
 
-
-
-.login{
+.login, .signin{
     text-align: center;
     background-color:  var(--main-text-color-hoover);
     border-radius: 0.25rem;
@@ -120,7 +118,7 @@ button{
 }
 
 @media only screen and (max-width: 500px) {
-    .login{
+    .login, .signin{
         width: 250px;
     }
 }
@@ -129,7 +127,11 @@ button{
     padding-top: 25px;
 }
 
-.login .auth{
+.signin h1{
+    padding-top: 25px;
+}
+
+.login, .signin .auth{
     padding-bottom: 25px;
 }
 
@@ -137,8 +139,16 @@ button{
     margin-top: 25px;
 }
 
-.auth__row:first-child{
+.signin .auth__submit{
+    margin-top: 25px;
+}
+
+.auth__row{
     margin-bottom: 10px;
+}
+
+.auth__row:last-child{
+    margin-bottom: 0px;
 }
 
 .auth__row label{
@@ -151,4 +161,11 @@ button{
     border: none;
     border-radius: 0.25rem;
     padding: 5px 10px;
+}
+
+.auth__error{
+    display: block;
+    color: red;
+    margin-top: 5px;
+    font-weight: bold;
 }
