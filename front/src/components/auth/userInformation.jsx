@@ -1,4 +1,4 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, {useContext} from 'react';
 import {UserContext} from "../../context/UserContext";
 
 const UserInformation = () => {
@@ -6,7 +6,7 @@ const UserInformation = () => {
 
   return (
     <div className="info">
-      <input ref={emailRef} type="email" className="info__input" value={email} />
+      <input type="email" className="info__input" value={email} />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Header = () => {
             <NavLink to="/connexion" className="nav__link">Connexion</NavLink>
           </li>
           <li className="nav__item">
-            <NavLink to="/connexion" className="nav__link">Inscription</NavLink>
+            <NavLink to="/inscription" className="nav__link">Inscription</NavLink>
           </li>
           <li className="nav__item">
             Panier({cart.length})

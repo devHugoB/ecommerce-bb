@@ -9,7 +9,7 @@ function connectUser(email, pass) {
         const token = jwt.sign({ user: res.email, niveau: res.level }, 'la clé');
         resolve({ token })
       }
-      rej({ mess: "Identifiant invalide" })
+      rej({ message: "Identifiant invalide" })
     })
   })
 }
@@ -18,13 +18,13 @@ function getUserIdByEmail(email) {
   return new Promise((resolve, rej) => {
     db.get("SELECT id FROM user WHERE email=?", email, (err, res) => {
       if (err) rej(err)
-      resolve(res)
+      resolve(res ?? [])
     })
   })
 }
 function addUser(email, pass) {
   return new Promise((resolve, rej) => {
-    db.run("INSERT INTO user (email,passwors,level) VALUES(?,?,0)", [email, pass], function (err, res) {
+    db.run("INSERT INTO user (email,password,level) VALUES(?,?,0)", [email, pass], function (err, res) {
       if (err) rej(err)
       resolve({ mess: "Utilisateur ajouté", id: this.lastID })
     })
