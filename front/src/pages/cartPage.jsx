@@ -5,8 +5,6 @@ const CartPage = () => {
   return (
     <>
       <h1 className="title">Mon panier</h1>
-      <hr className="separation" />
-
       <CartList />
       <CartInformation />
     </>

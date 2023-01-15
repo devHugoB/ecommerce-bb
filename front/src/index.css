@@ -220,3 +220,38 @@ button:hover{
 .detail__button{
     margin-top: 25px;
 }
+
+.cart__list{
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+
+.cart__list .item{
+    background-color: var(--main-text-color-hoover);
+    display: inline-flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 0.25rem;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+.item__name, .item__price, .item__qty, .item__delete{
+    margin-top: 5px;
+}
+
+.item__delete{
+    background-color: red;
+}
+
+.cart-info{
+    margin-left: 25px;
+}
+
+.cart-info__price{
+    margin-bottom: 10px;
+}
+
+.cart-info__validate{
+    background-color: green;
+}
