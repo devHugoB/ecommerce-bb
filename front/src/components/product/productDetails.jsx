@@ -11,16 +11,11 @@ const ProductDetails = ({product: {id, photo, name, description, cat_id, cat_nam
   return (
     <div className="detail">
       <img src={photo} alt={`Produit : ${name}`} className="detail__photo"/>
-      <h2 className="detail__name">{name}</h2>
-
-      <hr/>
-
-      <h3 className="detail__section">Description</h3>
-      <p className="detail__description">{description}</p>
-
-      <p className="detail__price">{price}€</p>
-
       <div className="detail__add">
+        <h2 className="detail__name">{name}</h2>
+        <h3 className="detail__section">Description :</h3>
+        <p className="detail__description">{description}</p>
+        <p className="detail__price">{price}€</p>
         <label className="detail__label">
           Quantité : <input ref={qtyRef} type="number" className="detail__input" min="1" step="1" defaultValue="1" />
         </label>

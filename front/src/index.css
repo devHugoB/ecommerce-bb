@@ -176,3 +176,47 @@ button:hover{
     font-weight: bold;
     font-size: 12px;
 }
+
+.detail{
+    display: block;
+    text-align: center;
+    padding: 25px;
+    border-radius: 0.25rem;
+    background-color: var(--main-text-color-hoover);
+    width: 550px;
+    margin: 25px auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .detail{
+        width: 250px;
+    }
+}
+
+.detail__photo{
+    width: 200px;
+    border-radius: 0.25rem;
+}
+
+.detail__label{
+    display: block;
+}
+
+.detail__add, .detail__name, .detail__section, .detail__description, .detail__price, .detail__label{
+    margin-top: 10px;
+}
+
+.detail__label input{
+    border: none;
+    border-radius: 0.25rem;
+    padding: 5px 10px;
+}
+
+.detail__price{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.detail__button{
+    margin-top: 25px;
+}
