@@ -7,7 +7,7 @@ function checkToken(req, res, next) {
     const decoded = jwt.verify(token, "la clé");
 
     if (decoded && decoded.user) {
-      req.user = { mail: decoded.user, niveau: decoded.niveau }
+      req.user = { mail: decoded.user, level: decoded.niveau }
       next()
     }
     else {

@@ -6,7 +6,7 @@ const UserInformation = () => {
 
   return (
     <div className="info">
-      <input type="email" className="info__input" value={email} />
+      <h2 className="input__info">{email}</h2>
     </div>
   );
 };
