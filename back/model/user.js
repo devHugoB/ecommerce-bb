@@ -7,9 +7,18 @@ function connectUser(email, pass) {
       if (err) rej(err)
       if (res && res.password === pass) {
         const token = jwt.sign({ user: res.email, niveau: res.level }, 'la clé');
-        resolve({ token })
+        resolve({ token, id: res.id })
       }
       rej({ message: "Identifiant invalide" })
+    })
+  })
+}
+
+function getUserById(id) {
+  return new Promise((resolve, rej) => {
+    db.get("SELECT * FROM user WHERE id=?", id, (err, res) => {
+      if (err) rej(err)
+      resolve(res ?? [])
     })
   })
 }
@@ -51,6 +60,7 @@ function deleteUser(id) {
 
 module.exports = {
   connectUser,
+  getUserById,
   getUserIdByEmail,
   addUser,
   updateUser,

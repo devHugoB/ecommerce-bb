@@ -30,9 +30,24 @@ export function addUser(email, pass) {
   })
 }
 
-export function getUser(email) {
+export function checkUserExist(email) {
   return new Promise((resolve, reject) => {
-    fetch(`http://localhost:3000/utilisateur/${email}`, {
+    fetch(`http://localhost:3000/utilisateur/verifies/${email}`, {
+      method: "GET",
+      headers: {
+        "Content-type": "application/json"
+      },
+    }).then(response => response.json())
+      .then(data => {
+        return resolve(data)
+      })
+      .catch(error => reject(error))
+  })
+}
+
+export function getUser(id) {
+  return new Promise((resolve, reject) => {
+    fetch(`http://localhost:3000/utilisateur/${id}`, {
       method: "GET",
       headers: {
         "Content-type": "application/json"

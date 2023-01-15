@@ -1,6 +1,6 @@
 const express = require('express')
 const checkToken = require('../middleware/checkToken')
-const { connectUser, addUser, getUserIdByEmail, updateUser, deleteUser } = require('../model/user')
+const { connectUser, addUser, getUserIdByEmail, updateUser, deleteUser, getUserById} = require('../model/user')
 const routeur = express.Router()
 
 routeur.post('/connexion', (req, res) => {
@@ -11,7 +11,15 @@ routeur.post('/connexion', (req, res) => {
   })
 })
 
-routeur.get('/:email', (req, res) => {
+routeur.get('/:id', (req, res) => {
+  getUserById(req.params.id).then(data => {
+    res.json(data)
+  }).catch(err => {
+    res.status(500).json(err)
+  })
+})
+
+routeur.get('/verifies/:email', (req, res) => {
   getUserIdByEmail(req.params.email).then(data => {
     res.json(data)
   }).catch(err => {

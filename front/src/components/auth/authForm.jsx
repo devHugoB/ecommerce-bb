@@ -1,6 +1,6 @@
 import React, {useContext, useRef, useState} from 'react';
 import {useNavigate} from "react-router";
-import {addUser, connectUser, getUser} from "../../api/user";
+import {addUser, checkUserExist, connectUser, getUser} from "../../api/user";
 import {UserContext} from "../../context/UserContext";
 
 const AuthForm = ({login = true}) => {
@@ -29,9 +29,17 @@ const AuthForm = ({login = true}) => {
           setEmailError(data.message)
           setPwdError(data.message)
         }
-        console.log(data)
-        // connect(data)
-        // navigate("/")
+
+        getUser(data.id).then(user => {
+          const informations = {
+            token: data.token,
+            email: user.email,
+            admin: user.level
+          }
+
+          connect(informations)
+          navigate(("/"))
+        })
       })
     } else {
       if (password !== confirmPassword) {
@@ -39,7 +47,7 @@ const AuthForm = ({login = true}) => {
         setSubmit(false);
       } else {
         const hash = btoa(password);
-        await getUser(email).then(data => {
+        await checkUserExist(email).then(data => {
           if (data.length === 0) {
             addUser(email, hash).then(response => {
               if ("id" in response) navigate("/connexion");
