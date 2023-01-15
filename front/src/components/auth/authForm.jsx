@@ -25,7 +25,7 @@ const AuthForm = ({login = true}) => {
     if (login) {
       const hash = btoa(password);
       await connectUser(email, hash).then(data => {
-        if (!data.ok) {
+        if ("message" in data) {
           setEmailError(data.message)
           setPwdError(data.message)
         } else {

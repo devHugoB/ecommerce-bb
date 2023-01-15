@@ -33,7 +33,7 @@ const Header = () => {
             )
           }
           <li className="nav__item">
-            Panier({cart.length})
+            <NavLink to="/panier" className="nav__link">Panier({cart.length})</NavLink>
           </li>
         </ul>
       </nav>

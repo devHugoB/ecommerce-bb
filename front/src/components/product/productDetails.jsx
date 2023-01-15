@@ -5,7 +5,7 @@ const ProductDetails = ({product: {id, photo, name, description, cat_id, cat_nam
   const {addToCart} = useContext(CartContext);
   const qtyRef = useRef();
   const handleClick = () => {
-    addToCart({id, qty: qtyRef.current.value})
+    addToCart({id, photo, name, price, qty: qtyRef.current.value})
   }
 
   return (

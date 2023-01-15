@@ -3,4 +3,5 @@ export { default as ShowProductPage } from "./showProductPage";
 export { default as LoginPage } from "./loginPage";
 export { default as SignInPage } from "./signInPage";
 export { default as ProfilPage } from "./profilPage";
+export { default as CartPage } from "./cartPage";
 export { default as NotFoundPage } from "./notFoundPage";

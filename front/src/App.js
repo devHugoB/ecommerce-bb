@@ -1,6 +1,6 @@
 import {Footer, Header} from "./components";
 import {Route, Routes} from "react-router";
-import {HomePage, LoginPage, NotFoundPage, ProfilPage, ShowProductPage, SignInPage} from "./pages";
+import {CartPage, HomePage, LoginPage, NotFoundPage, ProfilPage, ShowProductPage, SignInPage} from "./pages";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
           <Route path="/inscription" element={<SignInPage />} />
           <Route path="/profil" element={<ProfilPage />} />
           <Route path="/produit/:id" element={<ShowProductPage />} />
+          <Route path="/panier" element={<CartPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>

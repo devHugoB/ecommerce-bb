@@ -4,4 +4,6 @@ export { default as ProductsList } from "./product/productsList";
 export { default as ProductDetails } from "./product/productDetails";
 export { default as AuthForm } from "./auth/authForm";
 export { default as UserInformation } from "./auth/userInformation";
+export { default as CartList } from "./cart/cartList";
+export { default as CartInformation } from "./cart/cartInformation";
 export { default as Logout } from "./auth/logout";
