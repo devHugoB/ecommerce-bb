@@ -28,18 +28,18 @@ const AuthForm = ({login = true}) => {
         if (!data.ok) {
           setEmailError(data.message)
           setPwdError(data.message)
+        } else {
+          getUser(data.id).then(user => {
+            const informations = {
+              token: data.token,
+              email: user.email,
+              admin: user.level
+            }
+
+            connect(informations)
+            navigate(("/"))
+          })
         }
-
-        getUser(data.id).then(user => {
-          const informations = {
-            token: data.token,
-            email: user.email,
-            admin: user.level
-          }
-
-          connect(informations)
-          navigate(("/"))
-        })
       })
     } else {
       if (password !== confirmPassword) {
